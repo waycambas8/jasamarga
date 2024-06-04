@@ -14,12 +14,51 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Employee.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    nik: {
+      type: DataTypes.STRING
+    },
+    name: {
+      type: DataTypes.STRING
+    },
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    start_date: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    end_date: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    created_by: {
+      type: DataTypes.STRING
+    },
+    updated_by: {
+      type: DataTypes.STRING
+    },
+    created_at: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updated_at: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
   }, {
     sequelize,
     modelName: 'Employee',
+    tableName: 'employee',
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   });
   return Employee;
 };
