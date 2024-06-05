@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const employee = require('./employee');
 module.exports = (sequelize, DataTypes) => {
   class Profile extends Model {
     /**
@@ -20,12 +21,17 @@ module.exports = (sequelize, DataTypes) => {
     id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true,   
         type: DataTypes.INTEGER
     },
     employee_id: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        references: {
+            model: employee,
+            key: 'id'
+        },
+        onDelete: 'CASCADE'
     },
     place_of_birth: {
         type: DataTypes.STRING(255)

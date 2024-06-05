@@ -34,4 +34,4 @@ const createEducation = [
     }
 ]
 
-module.exports = createEmployee
+module.exports = createEducation
