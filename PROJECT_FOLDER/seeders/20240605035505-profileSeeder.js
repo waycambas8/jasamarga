@@ -5,7 +5,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     return queryInterface.bulkInsert('employee_profile', [
       {
-        id: 1,
         employee_id: 1,
         place_of_birth: 'Jakarta',
         date_of_birth: new Date('1997-05-02'),
@@ -18,7 +17,6 @@ module.exports = {
         updated_at: new Date('2022-12-12'),
       },
       {
-        id: 2,
         employee_id: 2,
         place_of_birth: 'Sukabumi',
         date_of_birth: new Date('1997-05-02'),

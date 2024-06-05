@@ -1,6 +1,6 @@
 const { async } = require("rxjs");
 const { Op } = require("sequelize");
-const {Education} = require("../../../models");
+const { Education, Employee } = require("../../../models");
 
 class EducationBrowseController {
     async all (_request, _response) {
@@ -24,6 +24,15 @@ class EducationBrowseController {
 
             query.limit = _request.query.limit ? _request.query.limit : 10;
             query.offset = _request.query.page ? (_request.query.page - 1) * query.limit : 0;
+
+            // Collection Join
+            query.include = [
+                {
+                    model: Employee,
+                    as: 'employee',
+                    required: false
+                }
+            ];
 
             const datas = await Education.findAll(query);
             return _response.json({

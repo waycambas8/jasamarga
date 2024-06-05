@@ -1,5 +1,5 @@
 const { async } = require("rxjs");
-const {Employee} = require("../../../models");
+const { Employee, Education, Family, Profile } = require("../../../models");
 const { Op } = require("sequelize");
 
 class EmployeeBrowseController {
@@ -34,6 +34,25 @@ class EmployeeBrowseController {
 
             query.limit = _request.query.limit ? _request.query.limit : 10;
             query.offset = _request.query.page ? (_request.query.page - 1) * query.limit : 0;
+
+            // Collection Join
+            query.include = [
+                {
+                    model: Education,
+                    as: 'education',
+                    required: false
+                },
+                {
+                    model: Family,
+                    as: 'families',
+                    required: false
+                },
+                {
+                    model: Profile,
+                    as: 'profile',
+                    required: false
+                },
+            ];
 
             const datas = await Employee.findAll(query);
             return _response.json({
