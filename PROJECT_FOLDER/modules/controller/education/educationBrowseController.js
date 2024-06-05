@@ -1,8 +1,8 @@
 const { async } = require("rxjs");
 const { Op } = require("sequelize");
-const {Profile} = require("../../../models");
+const {Education} = require("../../../models");
 
-class ProfilerowseController {
+class EducationBrowseController {
     async all (_request, _response) {
         const query = {};
         try {
@@ -25,7 +25,7 @@ class ProfilerowseController {
             query.limit = _request.query.limit ? _request.query.limit : 10;
             query.offset = _request.query.page ? (_request.query.page - 1) * query.limit : 0;
 
-            const datas = await Profile.findAll(query);
+            const datas = await Education.findAll(query);
             return _response.json({
                 data: datas
             }); 
@@ -40,4 +40,4 @@ class ProfilerowseController {
     };
 }
 
-module.exports = ProfilerowseController;
+module.exports = EducationBrowseController;
