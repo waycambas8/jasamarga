@@ -1,7 +1,7 @@
 const { async } = require("rxjs");
 
 class EmployeeController {
-    getAllUsers = async (req, res) => {
+    all = async (req, res) => {
         res.json("hallo")
     };
 }
