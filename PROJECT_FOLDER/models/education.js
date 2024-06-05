@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, sequelize) => {
   class Education extends Model {
     /**
      * Helper method for defining associations.
@@ -14,12 +14,48 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Education.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    employee_id: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
+    name: {
+      type: DataTypes.STRING
+    },
+    level: {
+      type: DataTypes.ENUM(['TK','SD','SMP','SMA','Strata 1','Strata 2','Doktor','Profesor']),
+      defaultValue:'SMA'
+    },
+    description: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    created_by: {
+      type: DataTypes.STRING
+    },
+    updated_by: {
+      type: DataTypes.STRING
+    },
+    created_at: {
+      allowNull: false,
+      type: DataTypes.DATE
+    },
+    updated_at: {
+      allowNull: false,
+      type: DataTypes.DATE
+    }
   }, {
     sequelize,
     modelName: 'Education',
+    tableName: 'education',
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
   });
   return Education;
 };

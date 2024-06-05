@@ -26,7 +26,7 @@ module.exports = {
         type: Sequelize.STRING(255)
       },
       date_of_birth: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       religion: {
         allowNull: false,
@@ -37,7 +37,7 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue:true
       },
-      is_divorce: {
+      is_divorced: {
         type: Sequelize.BOOLEAN,
         defaultValue:false
       },

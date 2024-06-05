@@ -17,8 +17,8 @@ module.exports = {
         type: Sequelize.STRING(255)
       },
       level: {
-        type: Sequelize.ENUM(['Tk','Sd','Smp','Sma','Strata 1','Strata 2','Doktor','Profesor']),
-        defaultValue:'Sma'
+        type: Sequelize.ENUM(['TK','SD','SMP','SMA','Strata 1','Strata 2','Doktor','Profesor']),
+        defaultValue:'SMA'
       },
       description: {
         allowNull: false,
