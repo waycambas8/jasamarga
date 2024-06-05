@@ -13,7 +13,7 @@ module.exports = {
         created_by: 'admin',
         created_at: new Date('2022-12-12'),
         updated_by: 'admin',
-        updated_at: new Date('2022-12-12'), // Use correct field name
+        updated_at: new Date('2022-12-12'),
       },
       {
         id: 2,
@@ -24,7 +24,7 @@ module.exports = {
         created_by: 'admin',
         created_at: new Date('2022-12-12'),
         updated_by: 'admin',
-        updated_at: new Date('2022-12-12'), // Use correct field name
+        updated_at: new Date('2022-12-12'),
       },
     ]);
   },
