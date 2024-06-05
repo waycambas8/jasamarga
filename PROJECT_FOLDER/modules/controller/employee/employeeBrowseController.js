@@ -64,8 +64,41 @@ class EmployeeBrowseController {
         }
     };
 
-    async detail (req, res) {
-        res.json('hallo detail');
+    async detail (_request, _response) {
+        const query = {};
+        try {
+            query.where = {}
+            if (_request.params.id) {
+                query.where.id = _request.params.id;
+            }
+
+            // Collection Join
+            query.include = [
+                {
+                    model: Education,
+                    as: 'education',
+                    required: false
+                },
+                {
+                    model: Family,
+                    as: 'families',
+                    required: false
+                },
+                {
+                    model: Profile,
+                    as: 'profile',
+                    required: false
+                },
+            ];
+
+            const datas = await Employee.findOne(query);
+            return _response.json({
+                data: datas
+            }); 
+        } catch (error) {
+            console.error(error);
+            return _response.status(500).json({ error: error });
+        }
     };
 }
 
