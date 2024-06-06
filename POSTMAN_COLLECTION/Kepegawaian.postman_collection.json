@@ -332,37 +332,6 @@
 					"response": []
 				},
 				{
-					"name": "GET ALL Filter: name",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/education?id=2,1&orderBy=id&orderType=asc",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"education"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "2,1"
-								},
-								{
-									"key": "orderBy",
-									"value": "id"
-								},
-								{
-									"key": "orderType",
-									"value": "asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GET ALL Order: id",
 					"request": {
 						"method": "GET",
@@ -577,37 +546,6 @@
 					"response": []
 				},
 				{
-					"name": "GET ALL Filter: name",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/employee?id=2,1&orderBy=id&orderType=asc",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"employee"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "2,1"
-								},
-								{
-									"key": "orderBy",
-									"value": "id"
-								},
-								{
-									"key": "orderType",
-									"value": "asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "GET ALL Order: id",
 					"request": {
 						"method": "GET",
@@ -792,37 +730,6 @@
 				},
 				{
 					"name": "GET ALL Filter: id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/profile?id=2,1&orderBy=id&orderType=asc",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"profile"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "2,1"
-								},
-								{
-									"key": "orderBy",
-									"value": "id"
-								},
-								{
-									"key": "orderType",
-									"value": "asc"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET ALL Filter: name",
 					"request": {
 						"method": "GET",
 						"header": [],
