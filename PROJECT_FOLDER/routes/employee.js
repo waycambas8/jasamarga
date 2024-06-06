@@ -8,6 +8,7 @@ var router = express.Router();
     
 /* GET home page. */
 router.get('/', new EmployeeBrowseController().all);
+router.get('/report', new EmployeeBrowseController().report);
 router.get('/:id', new EmployeeBrowseController().detail);
 
 router.post('/', createEmployee, new EmployeeController().create);
