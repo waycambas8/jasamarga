@@ -52,5 +52,5 @@ docker exec -it app sh
 npx sequelize-cli db:migrate:undo:all
 ```
 
-4. Run Application in port 3000
+5. Run Application in port 3000
 
