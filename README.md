@@ -6,3 +6,4 @@
 - untuk aplikasi ada di folder PROJECT_FOLDER
 - untuk query raw ada di folder RAW_QUERY
 - untuk referensi sebagai bahan pengerjaan ada di folder WORK_SHEET
+<!-- cache check 2026-10-20 -->
